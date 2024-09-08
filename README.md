@@ -1,4 +1,4 @@
-# blogging-website
+# blogging-website-backend
 
 ## Backend
 - **Status**: Completed
