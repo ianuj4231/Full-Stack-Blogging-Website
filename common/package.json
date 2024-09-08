@@ -1,0 +1,18 @@
+{
+  "name": "@ianuj4231/blogging-website-2024-common",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}
