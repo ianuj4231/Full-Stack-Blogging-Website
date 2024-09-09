@@ -8,7 +8,7 @@
 The backend for the blogging website has been completed and deployed to Cloudflare. 
 
 **API Endpoints:** The base URL provided is for the backend services. To access specific API endpoints, append the relevant paths to the base URL. For example:
-- `https://backend.ianuj4231.workers.dev/api/v1/posts` (Replace `/api/v1/posts` with the actual API paths you need to use.)
+- `https://backend.ianuj4231.workers.dev/api/v1/user/signup` (Replace `api/v1/user/signup` with the actual API paths you need to use.)
 
 ---
 
