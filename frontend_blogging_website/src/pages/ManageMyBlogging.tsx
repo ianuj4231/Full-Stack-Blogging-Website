@@ -17,7 +17,6 @@ interface Post {
 
 
 
-const token = localStorage.getItem("token")
 
 export function ManageMyBlogging() {
     const navigate = useNavigate();
