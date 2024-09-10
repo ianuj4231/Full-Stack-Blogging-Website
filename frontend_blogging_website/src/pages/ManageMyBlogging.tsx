@@ -15,9 +15,6 @@ interface Post {
     content: string;
 }
 
-
-
-
 export function ManageMyBlogging() {
     const navigate = useNavigate();
     const [isTokenValid, setIsTokenValid] = useState(false);
