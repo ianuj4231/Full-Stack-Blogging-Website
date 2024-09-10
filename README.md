@@ -1,4 +1,4 @@
-# blogging-website-backend
+# Full-Stack-Blogging-Website
 
 ## Backend
 - **Status**: Completed
