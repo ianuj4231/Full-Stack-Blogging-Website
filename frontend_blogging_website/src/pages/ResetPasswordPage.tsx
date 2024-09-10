@@ -39,14 +39,13 @@ export function ResetPasswordPage() {
                     toast.error(errorMessages);
                 } else {
                     try {
-                        const response = await axios.put(`${baseUrl}/api/v1/user/resetPassword`, {
+                          await axios.put(`${baseUrl}/api/v1/user/resetPassword`, {
                             email,
                            password:  newPassword,
                         });
                         console.log("Password updated successfully");
                         toast.success("Password updated successfully!");
-                        localStorage.setItem("token", response.data.token);
-                        navigate("/getAllBlogs");
+                        navigate("/signin");
                     } catch (error) {
                         toast.error("Try later. Server error.");
                     }
