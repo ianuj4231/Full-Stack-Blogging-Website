@@ -1,6 +1,5 @@
 import { useRecoilState } from 'recoil';
-import React, { useEffect } from 'react';
-import { emailState, passwordState, nameState } from '../recoil/atoms';
+import { emailState, passwordState } from '../recoil/atoms';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';

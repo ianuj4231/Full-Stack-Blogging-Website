@@ -1,9 +1,8 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import  { MouseEvent } from 'react';
 import { backend_url } from '../config';
-import { promises } from 'dns';
 import { useNavigate } from 'react-router-dom';
 const baseUrl = backend_url ;
 export function SignupEnterEmail() : JSX.Element   {

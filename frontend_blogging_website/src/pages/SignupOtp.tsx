@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, ChangeEvent, MouseEvent } from 'react';
+import { useState, ChangeEvent, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { backend_url } from '../config';
 import { useLocation } from 'react-router-dom';

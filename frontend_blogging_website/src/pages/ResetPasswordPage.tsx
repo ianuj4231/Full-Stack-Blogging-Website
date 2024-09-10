@@ -5,7 +5,6 @@ import { backend_url } from '../config';
 const baseUrl = backend_url;
 import { signinSchema } from '@ianuj4231/blogging-website-2024-common';
 import axios from 'axios';
-import { passwordState } from '../recoil/atoms';
 
 export function ResetPasswordPage() {
     const navigate = useNavigate();

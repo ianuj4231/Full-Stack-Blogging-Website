@@ -1,5 +1,5 @@
 import  {  useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ export function ForgotPasswordOTP_Page(): JSX.Element {
     const [otpSent, setOtpSent] = useState(false);
     async function handleClick() {
         try {
-            const response = await axios.post(`${baseUrl}/api/v1/user/forgotPassword`, { email });
+             await axios.post(`${baseUrl}/api/v1/user/forgotPassword`, { email });
             toast.success("a 5-min valid OTP is  sent to your mail")
             setOtpSent(true);
         } catch (error) {
@@ -32,7 +32,6 @@ export function ForgotPasswordOTP_Page(): JSX.Element {
                     localStorage.setItem("email_password_forgot", email);
 
                     toast.success("otp is valid");
-                    // await new Promise((r)=>setTimeout(r, 1000));
                     navigate('/resetPasswordPage');
                 }else{
                         toast.error("OTP is invalid or expired. Please try again")
