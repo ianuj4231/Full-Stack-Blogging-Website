@@ -1,12 +1,11 @@
 import { Hono } from "hono"
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
-// import { signupSchema } from "@ianuj4231/blogging-website-2024-common";
+import { signupSchema } from "@ianuj4231/blogging-website-2024-common";
 import { sign } from 'hono/jwt'
 import { authenticateJwt } from '../middlewares/authormiddlewarejwtauthenticate';
 import { sendEmail } from './emailService';
 import { generateOTP, storeOTP, verifyOTP } from './otpService';
-
 
 async function hashPassword(password: string) {
     const encoder = new TextEncoder();
@@ -34,13 +33,28 @@ const userRouter = new Hono<{
 
 
 
-userRouter.get('/signup', async (c) => {
+userRouter.post('/signup', async (c) => {
     console.log('Signup called');
 
     const { email } = await c.req.json();
     console.log('Received email:', email);
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL
+    }).$extends(withAccelerate())
+
+    const existingUser = await prisma.user.findUnique(
+        {
+            where: {
+                email: email
+            }
+        }
+    );
+
+    if (existingUser) {
+        return c.json({ message : 'User with this email already exists' }, 401);
+    }
+
     const otpPurpose = "email_verification"
-    // Generate and store OTP
     const otp = generateOTP();
     const env = c.env;
 
@@ -54,12 +68,15 @@ userRouter.get('/signup', async (c) => {
     return c.json({ message: 'OTP sent to your email' }, 200);
 });
 
-userRouter.get('/verify-otp', async (c) => {
+userRouter.post('/verify-otp', async (c) => {
     const { email, otp, otpPurpose } = await c.req.json();
     console.log("type of otp is ", typeof (otp));
+    console.log(email);
+    console.log(otpPurpose);
 
     const env = c.env;
     const isValid = await verifyOTP(env, email, otp, otpPurpose);
+    console.log("isValid", isValid);
 
     if (!isValid) {
         return c.json({ error: 'Invalid or expired OTPx' }, 400);
@@ -80,23 +97,13 @@ userRouter.post("/signupFinal", async (c) => {
 
     const { password, email, name } = body;
 
-    const existingUser = await prisma.user.findUnique(
-        {
-            where: {
-                email: body.email
-            }
-        }
-    );
+    
 
-    if (existingUser) {
-        return c.json({ error: 'User with this email already exists' }, 400);
+    const result = signupSchema.safeParse(body);
+
+    if (!result.success) {
+        return c.json({ errors: result.error.errors }, 400);
     }
-
-    // const result = signupSchema.safeParse(body);
-
-    // if (!result.success) {
-    //     return c.json({ errors: result.error.errors }, 400);
-    // }
 
 
     if (password) {
@@ -120,7 +127,7 @@ userRouter.post("/signupFinal", async (c) => {
     }
 })
 
-userRouter.get("/forgotPassword", async (c) => {
+userRouter.post("/forgotPassword", async (c) => {
     console.log("xxx");
     const response = { message: "xxx" };
     console.log("Sending response:", response);
@@ -147,13 +154,33 @@ userRouter.get("/forgotPassword", async (c) => {
             return c.json({ message: 'OTP sent to your email' }, 200);
         }
     } catch (error) {
-
+        c.status(500)
+        c.json({ error: 'Server error. Please try again later.' });
     }
 })
 
+userRouter.put("/resetPassword", async (c) => {
+    try {
+        const body = await c.req.json();
+        const { email, password } = body;
+        const prisma = new PrismaClient({
+            datasourceUrl: c.env.DATABASE_URL
+        }).$extends(withAccelerate());
+        const hashedPassword = await hashPassword(password);
+        await prisma.user.update({
+            where: { email },
+            data: { password: hashedPassword },
+        });
+        c.status(200);
+      return c.json({ message: 'Password updated successfully' });
+    } catch (error) {
+        console.error('Error updating password:', error);
+        c.status(500)
+        return c.json({ error: 'Server error. Please try again later.' });
+    }
+})
 
-
-userRouter.get("/signin", async (c) => {
+userRouter.post("/signin", async (c) => {
     const body = await c.req.json();
     const { email, password } = body;
 
@@ -222,19 +249,33 @@ userRouter.get("/blog/bulk", async (c) => {
     }).$extends(withAccelerate());
     try {
         const allPosts = await prisma.post.findMany()
-        let obj = allPosts.map(async function (x) {
-            const userobj = await prisma.user.findUnique({ where: { id: x.authorId } })
-            return {
-                content: x.content, authorname: userobj?.name ?? "unkown"
-                , title: x.title
-            }
-        })
-        let obj2 = await Promise.all(obj);
-        return c.json(obj2, 200)
+        return c.json(allPosts, 200)
     } catch (error) {
         return c.json({ error: 'Failed to retrieve posts' }, 410);
     }
 
+})
+
+userRouter.get("/getPostsofOneAuthor", authenticateJwt, async (c) => {
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL
+    }).$extends(withAccelerate());
+    try {
+        const authorId = (c.req as any).user.id;
+        console.log("authorId ", authorId);
+        
+        let postsOfOne = await prisma.post.findMany({
+            where: {
+                authorId
+            }
+        })
+        c.status(200);
+       return c.json({ postsOfOne })
+
+    } catch (error) {
+        c.status(500);
+        c.json({ message: 'Failed to fetch posts' })
+    }
 })
 
 userRouter.get("/blog/:id", async (c) => {
@@ -266,6 +307,7 @@ userRouter.put("/editBlog/:id", authenticateJwt, async (c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL
     }).$extends(withAccelerate());
+console.log("xxxxxx");
 
     try {
         let postId = c.req.param('id');

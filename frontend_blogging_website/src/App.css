@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px; 
+  height: 80vh; /* This makes the container full height */
+}
+
+
+.button-container-home-page{
+  gap: 10px; display: flex;  right: 60px;position: absolute;  top: 45px; font-size: 24px; 
+}
+
+.button-container-home-page button {
+  font-size: 20px; /* Adjust the font size */
+  padding: 10px 20px; /* Adjust padding to increase button size */
+  cursor: pointer; /* Optional: Changes cursor to a pointer on hover */
+}
+
+
+.signup-center-container-enter-email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+}
+
+.common-width {
+  width: 100%;
+  max-width: 600px; /* Set the maximum width for both elements */
+  text-align: center; /* Center text inside the span */
+}
+
+.signup-center-container-enter-email-text {
+  font-size: 40px;
+  display: block; /* Make sure the span behaves like a block element */
+}
+
+.signup-center-container-enter-email-inputbox {
+  width: 100%;
+}
+
+.signup-center-container-enter-email-inputbox input {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px; /* Adjust font size for the input box */
+  border-radius: 5px; /* Optional: Rounded corners */
+  border: 1px solid #ccc; /* Optional: Border color */
+}
+
+.signup-center-container-enter-email-button {
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+
+.medium-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #007bff; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.medium-button:hover {
+  background-color: #0056b3; 
+}
+
+
+.blog-post {
+  padding: 10px;
+  margin-bottom: 10px; 
+  border-bottom: 2px solid #000000; 
+}

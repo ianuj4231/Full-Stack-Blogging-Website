@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  // engineType = "library" 
 }
 
 datasource db {
@@ -19,7 +18,7 @@ model User {
   email    String  @unique
   name     String?
   password String
-  role     Role    @default(READER)
+  role     Role    @default(AUTHOR)
   posts    Post[]
 }
 
@@ -27,14 +26,13 @@ model Post {
   id       Int    @id @default(autoincrement())
   title    String
   content  String
-  authorId Int //foreign key
+  authorId Int
   author   User   @relation(fields: [authorId], references: [id])
 }
 
 enum Role {
   ADMIN
   AUTHOR
-  READER
 }
 
 model OTP {

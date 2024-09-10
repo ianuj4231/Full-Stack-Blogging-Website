@@ -1,7 +1,5 @@
-name = "backend"
+name = "blogging-website-2024-backend"
 compatibility_date = "2024-08-23"
-
-
 
 [vars]
 DATABASE_URL = ""

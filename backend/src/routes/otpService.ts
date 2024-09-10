@@ -1,10 +1,6 @@
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
-// const prisma = new PrismaClient({
-//     datasourceUrl: process.env.DATABASE_URL
-// }).$extends(withAccelerate())
-
 const createPrismaClient = (databaseUrl: string) => {
     return new PrismaClient({
         datasourceUrl: databaseUrl
@@ -60,14 +56,14 @@ const storeOTP = async (env: any, email: string, otp: number, otpPurpose: string
         where: {
             email_otpPurpose: {
                 email: email,
-                otpPurpose: otpPurpose, // Using composite unique key
+                otpPurpose: otpPurpose, 
             },
         },
         update: {
             otp,
             createdAt: new Date(),
             expiresAt: expirationTime,
-            otpPurpose: otpPurpose, // Ensure this field is included
+            otpPurpose: otpPurpose,
         },
         create: {
             email,
@@ -81,7 +77,8 @@ const storeOTP = async (env: any, email: string, otp: number, otpPurpose: string
 
 const verifyOTP = async (env: any, email: string, otp: number, otpPurpose: string) => {
     const prisma = createPrismaClient(env.DATABASE_URL);
-
+    console.log(email ,"otp is " +  otp,  otpPurpose );
+    
     const otpRecord = await prisma.oTP.findFirst({
         where: {
             email: email,
@@ -99,6 +96,8 @@ const verifyOTP = async (env: any, email: string, otp: number, otpPurpose: strin
             }
 
             if (otpRecord.otp === otp) {
+                console.log("otpm entered is ", otp);
+                
                 await prisma.oTP.delete({
                     where: {
                         email_otpPurpose: {
