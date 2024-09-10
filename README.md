@@ -1,6 +1,18 @@
-<<<<<<< HEAD
-# blogging-website
-in progress. 
-=======
-# blogging-website
->>>>>>> f603eab9b87e4608a7ab9b3a2172c0b0dcd54155
+# blogging-website-backend
+
+## Backend
+- **Status**: Completed
+- **Deployment**: Deployed to Cloudflare
+- **Base URL**: [https://backend.ianuj4231.workers.dev/](https://backend.ianuj4231.workers.dev/)
+
+The backend for the blogging website has been completed and deployed to Cloudflare. 
+
+**API Endpoints:** The base URL provided is for the backend services. To access specific API endpoints, append the relevant paths to the base URL. For example:
+- `https://backend.ianuj4231.workers.dev/api/v1/user/signup` (Replace `api/v1/user/signup` with the actual API paths you need to use.)
+
+---
+
+## Frontend
+- **Status**: Pending
+
+---
