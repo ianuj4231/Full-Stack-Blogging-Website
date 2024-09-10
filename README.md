@@ -13,7 +13,5 @@ The backend for the blogging website has been completed and deployed to Cloudfla
 - **Status**: Completed
 - **Deployment**: Deployed to Vercel
 - **Base URL**: [https://full-stack-blogging-website.vercel.app/](https://full-stack-blogging-website.vercel.app/)
-  Visit Full Stack Blogging Website
-</a>
 
 The frontend has been deployed to Vercel.
