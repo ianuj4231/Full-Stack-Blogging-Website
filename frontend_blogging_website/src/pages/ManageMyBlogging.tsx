@@ -97,8 +97,7 @@ export function ManageMyBlogging() {
         try {
             await axios.delete(`${backend_url}/api/v1/user/deleteBlog/${id}`, {
                 headers: {
-                    'Authorization': `Bearer ${token}`
-                }
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`                }
             });
             toast.success("blog deleted");
             setPostsofone((prev) => prev.filter((blog: Post) => blog.id !== id));
