@@ -43,9 +43,10 @@ The frontend has been deployed to Vercel.
 
 ![image](https://github.com/user-attachments/assets/13b14bcb-0c24-434c-99e5-8afc6ced6807)
 
-![image](https://github.com/user-attachments/assets/701ee11d-04d7-41a2-8de0-fa8395e5842c)
+![image](https://github.com/user-attachments/assets/23a5a471-9adc-48d6-a935-395827689215)
 
-![image](https://github.com/user-attachments/assets/1d952f2b-a9cb-41a9-bdad-d54c095ed677)
+![image](https://github.com/user-attachments/assets/ce7ca43a-c8c5-406a-abc9-8f496cef27fc)
+
  
 ![image](https://github.com/user-attachments/assets/089a3762-874b-4c7b-9ef9-835b48988d8b)
  
