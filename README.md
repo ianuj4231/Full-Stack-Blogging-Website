@@ -21,17 +21,17 @@ The frontend has been deployed to Vercel.
 
 ## Working Screenshots
 
-- ![image](https://github.com/user-attachments/assets/1523b156-b807-44cc-919c-c40a0b55a537)
+ ![image](https://github.com/user-attachments/assets/1523b156-b807-44cc-919c-c40a0b55a537)
 
-- ![image](https://github.com/user-attachments/assets/92ed0932-1e5a-4a1f-8db6-333383a39c25)
+ ![image](https://github.com/user-attachments/assets/92ed0932-1e5a-4a1f-8db6-333383a39c25)
 
-- ![image](https://github.com/user-attachments/assets/d04839b4-4991-479f-9167-3a9f6ce26e4a)
+ ![image](https://github.com/user-attachments/assets/d04839b4-4991-479f-9167-3a9f6ce26e4a)
 
-- ![image](https://github.com/user-attachments/assets/76446c36-55da-40a8-8aff-7f7886ccd1be)
+ ![image](https://github.com/user-attachments/assets/76446c36-55da-40a8-8aff-7f7886ccd1be)
 
-- ![image](https://github.com/user-attachments/assets/d5dab71f-e9af-4b5e-ae6f-36174fc18f8f)
+![image](https://github.com/user-attachments/assets/d5dab71f-e9af-4b5e-ae6f-36174fc18f8f)
 
-- ![image](https://github.com/user-attachments/assets/694819ca-576d-4cf1-84dc-44a579f89d78)
+![image](https://github.com/user-attachments/assets/694819ca-576d-4cf1-84dc-44a579f89d78)
 
 ![image](https://github.com/user-attachments/assets/f9f12bc9-2a12-4742-bf32-eac51f9b58a1)
  
