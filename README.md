@@ -10,7 +10,7 @@
   - **Email**: `ianuj4231@gmail.com`
   - **Password**: `ianuj123@`
     
-- The frontend has been deployed to Vercel.
+- The frontend has been completed deployed to Vercel.
 
 ---
 
