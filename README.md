@@ -1,5 +1,9 @@
 # Full-Stack Blogging Website
--**total time taken** - 4 full days inclusive of deployment work
+**total time taken** - 4 full days inclusive of deployment work
+
+**credentials** - 
+**email** - ianuj4231@gmail.com
+**password** - ianuj123@
 
 ## Backend
 - **Status**: Completed
