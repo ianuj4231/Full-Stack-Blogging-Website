@@ -1,6 +1,17 @@
-# Full-Stack Blogging Website
+`# Full-Stack Blogging Website
 **total time taken** - 4 full days inclusive of deployment work
 
+## Frontend
+- **Status**: Completed
+- **Deployment**: Deployed to Vercel
+- **Base URL**: [https://full-stack-blogging-website.vercel.app/](https://full-stack-blogging-website.vercel.app/)
+- **Time taken**: 2 full days
+- **Use credentials**:
+  - **Email**: `ianuj4231@gmail.com`
+  - **Password**: `ianuj123@`
+The frontend has been deployed to Vercel.
+
+---
 
 ## Backend
 - **Status**: Completed
@@ -12,15 +23,7 @@ The backend for the blogging website has been completed and deployed to Cloudfla
 
 ---
 
-## Frontend
-- **Status**: Completed
-- **Deployment**: Deployed to Vercel
-- **Base URL**: [https://full-stack-blogging-website.vercel.app/](https://full-stack-blogging-website.vercel.app/)
-- **Time taken**: 2 full days
 
-The frontend has been deployed to Vercel.
-
----
 
 ## Working Screenshots
 
