@@ -50,10 +50,6 @@ The backend for the blogging website has been completed and deployed to Cloudfla
 
 ![image](https://github.com/user-attachments/assets/13b14bcb-0c24-434c-99e5-8afc6ced6807)
 
-![image](https://github.com/user-attachments/assets/12832405-87d0-460f-9d78-fe9398d244fb)
-![image](https://github.com/user-attachments/assets/0b68cab1-75f0-4f8e-b391-bb78809e7e08)
-![image](https://github.com/user-attachments/assets/1f41cd3b-e4c8-4160-a496-d169649ab72b)
-![image](https://github.com/user-attachments/assets/b583be7f-623b-4726-b650-320a32db3c06)
 
 ![image](https://github.com/user-attachments/assets/ce7ca43a-c8c5-406a-abc9-8f496cef27fc)
  
